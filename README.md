@@ -31,3 +31,13 @@ Em vez disso, o dígito 1 aparece como o primeiro dígito significativo em aprox
 A probabilidade teórica de um dígito $d \in {1, ..., 9}$ ser o primeiro dígito significativo é modelada pela equação logarítmica:
 
 $$P(d) = \log_{10}\left(1 + \frac{1}{d}\right)$$
+
+# Intuição/justificativa matemática
+
+A explicação mais sólida é a invariância de escala: se uma distribuição de primeiros dígitos é independente das unidades (metros vs. pés, reais vs. dólares), a única distribuição possível é a de Benford. Também há o argumento da invariância de base. A ideia central: se você olhar os dados numa escala logarítmica, eles tendem a se espalhar uniformemente ao longo das ordens de magnitude — e ao voltar pra escala linear, os intervalos que começam com dígitos menores são "mais largos" em log, capturando mais valores.
+
+O intervalo em log de números que começam com dígito 
+𝑑
+d é [log 10 𝑑, log 10(𝑑+1))d
+
+log 10 (d+1)), cujo comprimento é exatamente log 10(1+1/𝑑). Isso é a fórmula.
