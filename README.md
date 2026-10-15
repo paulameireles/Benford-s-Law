@@ -32,12 +32,22 @@ A probabilidade teórica de um dígito $d \in {1, ..., 9}$ ser o primeiro dígit
 
 $$P(d) = \log_{10}\left(1 + \frac{1}{d}\right)$$
 
-# Intuição/justificativa matemática
+## Intuição matemática
 
-A explicação mais sólida é a invariância de escala: se uma distribuição de primeiros dígitos é independente das unidades (metros vs. pés, reais vs. dólares), a única distribuição possível é a de Benford. Também há o argumento da invariância de base. A ideia central: se você olhar os dados numa escala logarítmica, eles tendem a se espalhar uniformemente ao longo das ordens de magnitude — e ao voltar pra escala linear, os intervalos que começam com dígitos menores são "mais largos" em log, capturando mais valores.
+A explicação mais sólida é a **invariância de escala**: se a distribuição dos primeiros
+dígitos não depende da unidade de medida (metros ou pés, reais ou dólares), a única
+distribuição possível é a de Benford. Também existe um argumento análogo de
+**invariância de base**.
 
-O intervalo em log de números que começam com dígito 
-𝑑
-d é [log 10 𝑑, log 10(𝑑+1))d
+A ideia central: em escala logarítmica, esses dados tendem a se espalhar de forma
+uniforme ao longo das ordens de grandeza. Os números que começam com o dígito $d$
+ocupam, em log, o intervalo
 
-log 10 (d+1)), cujo comprimento é exatamente log 10(1+1/𝑑). Isso é a fórmula.
+$$[\log_{10} d,\ \log_{10}(d+1))$$
+
+cujo comprimento é exatamente
+
+$$\log_{10}(d+1) - \log_{10} d = \log_{10}\left(1 + \frac{1}{d}\right)$$
+
+Ou seja, o intervalo do dígito 1 é o mais "largo" em escala log e captura mais valores.
+Essa é a fórmula de Benford.imento é exatamente log 10(1+1/𝑑). Isso é a fórmula.
